@@ -27,10 +27,21 @@ class App extends Component {
     }
   }
 
-  handleChange = value => {
+  handleChange = (value, deletedToken) => {
     this.setState({value})
     try{
-      fetch('http://localhost:8080/api/addToken', {
+      if(deletedToken){
+        // console.log('#######',deletedToken)
+        fetch('http://localhost:8080/api/deleteToken', {
+                method: 'DELETE',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({_id: deletedToken._id})
+              })
+      }else{
+        fetch('http://localhost:8080/api/addToken', {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -38,6 +49,7 @@ class App extends Component {
                 },
                 body: JSON.stringify(value[value.length - 1])
               });
+      }
     } catch(err){
       console.log(err)
     }

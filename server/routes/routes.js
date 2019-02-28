@@ -4,7 +4,7 @@ const TokenController = require('../controller/TokenController')
 module.exports = (router) => {
 
     /**
-     * get a user
+     * get tokend
      */
     router
         .route('/getTokens')
@@ -12,9 +12,16 @@ module.exports = (router) => {
 
     
     /**
-     * adds a user
+     * adds token
      */
     router
         .route('/addToken')
         .post(TokenController.addToken);
+    
+     /**
+     * delete token
+     */
+    router
+        .route('/deleteToken')
+        .delete(TokenController.deleteToken);
 }

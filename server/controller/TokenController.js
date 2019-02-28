@@ -25,4 +25,16 @@ module.exports = {
             return res           
         })
     },
+
+    deleteToken: (req, res, next) => {
+        Token.remove({_id: req.body._id}).then((err, tokens)=> {
+            if (err)
+                res.send(err)
+            else if (!tokens)
+                res.send(404)
+            else
+                res.send(tokens)
+            return res           
+        })
+    },
 }

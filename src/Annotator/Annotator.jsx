@@ -60,7 +60,7 @@ class TokenAnnotator extends React.Component {
       this.props.onChange([
         ...this.props.value.slice(0, splitIndex),
         ...this.props.value.slice(splitIndex + 1),
-      ])
+      ], this.props.value[splitIndex])
     }
   }
 
