@@ -1,0 +1,30 @@
+.App {
+  font-family: 'IBM Plex Sans';
+  min-height: 100vh;
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Annotator {
+  max-width: 500;
+  line-height: 1.5;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.font-size-16 {
+  font-size: 36px;
+}
+.margin-left-right-10 {
+  margin: 0 15px 0 15px;
+}
