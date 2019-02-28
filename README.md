@@ -9,5 +9,3 @@
   yarn run frontend & yarn run backend.
   ```
 - open http://localhost:3000/
-
-- Currently deletion of token is not handled in the backend.
