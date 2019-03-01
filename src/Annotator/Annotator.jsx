@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import Mark from './Mark'
-import {selectionIsEmpty, splitTokensWithOffsets} from './utils'
+import {selectionIsEmpty, splitTokens} from './utils'
 
 
 const Token = props => {
@@ -71,7 +71,7 @@ class TokenAnnotator extends React.Component {
 
   render() {
     const {tokens, value, renderMark, className} = this.props
-    const splits = splitTokensWithOffsets(tokens, value);
+    const splits = splitTokens(tokens, value);
     return (
       <div className = {className} ref={this.rootRef}>
         {splits.map(

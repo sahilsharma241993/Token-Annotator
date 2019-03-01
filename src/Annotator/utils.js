@@ -1,6 +1,6 @@
 import * as sortBy from 'lodash.sortby'
 
-export const splitTokensWithOffsets = (text, offsets) => {
+export const splitTokens = (text, offsets) => {
   let lastEnd = 0
   const splits = []
 
@@ -36,19 +36,4 @@ export const selectionIsEmpty = (selection) => {
   let position = selection.anchorNode.compareDocumentPosition(selection.focusNode)
 
   return position === 0 && selection.focusOffset === selection.anchorOffset
-}
-
-export const selectionIsBackwards = (selection) => {
-  if (selectionIsEmpty(selection)) return false
-
-  let position = selection.anchorNode.compareDocumentPosition(selection.focusNode)
-
-  let backward = false
-  if (
-    (!position && selection.anchorOffset > selection.focusOffset) ||
-    position === Node.DOCUMENT_POSITION_PRECEDING
-  )
-    backward = true
-
-  return backward
 }

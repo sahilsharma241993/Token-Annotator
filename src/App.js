@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Annotator from './Annotator/Annotator'
 
-const TEXT = `Dark Angel is an American cyberpunk television series that premiered in October 2000.
+const text = `Dark Angel is an American cyberpunk television series that premiered in October 2000.
               Created by James Cameron and Charles H. Eglee, it starred Jessica Alba (pictured) in her breakthrough role. 
               Set in 2019, the series chronicles the life of Max Guevara (Alba), a genetically enhanced super-soldier who escapes from a covert military facility as a child. 
               In a post-apocalyptic Seattle, she tries to lead a normal life, while eluding capture by government agents and searching for 
@@ -31,7 +31,6 @@ class App extends Component {
     this.setState({value})
     try{
       if(deletedToken){
-        // console.log('#######',deletedToken)
         fetch('http://localhost:8080/api/deleteToken', {
                 method: 'DELETE',
                 headers: {
@@ -65,7 +64,7 @@ class App extends Component {
         </header>
         <Annotator
               className = "Annotator margin-left-right-10"
-              tokens={TEXT.split(' ')}
+              tokens={text.split(' ')}
               value={this.state.value}
               onChange={this.handleChange}
               getSpan={span => ({
